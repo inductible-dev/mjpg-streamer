@@ -718,18 +718,10 @@ void *client_thread(void *arg)
 
     /* now it's time to answer */
     if (query_suffixed) {
-        if (req.type == A_OUTPUT_JSON) {
-            if(!(input_number < pglobal->outcnt)) {
-                DBG("Output number: %d out of range (valid: 0..%d)\n", input_number, pglobal->outcnt-1);
-                send_error(lcfd.fd, 404, "Invalid output plugin number");
-                req.type = A_UNKNOWN;
-            }
-        } else {
-            if(!(input_number < pglobal->incnt)) {
-                DBG("Input number: %d out of range (valid: 0..%d)\n", input_number, pglobal->incnt-1);
-                send_error(lcfd.fd, 404, "Invalid input plugin number");
-                req.type = A_UNKNOWN;
-            }
+        if(!(input_number < pglobal->incnt)) {
+            DBG("Input number: %d out of range (valid: 0..%d)\n", input_number, pglobal->incnt-1);
+            send_error(lcfd.fd, 404, "Invalid input plugin number");
+            req.type = A_UNKNOWN;
         }
     }
 
