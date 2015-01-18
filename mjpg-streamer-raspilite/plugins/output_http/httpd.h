@@ -84,19 +84,7 @@ static const struct {
 typedef enum {
     A_UNKNOWN,
     A_SNAPSHOT,
-    A_SNAPSHOT_WXP,
     A_STREAM,
-    A_STREAM_WXP,
-    A_COMMAND,
-    A_FILE,
-    A_CGI,
-    A_TAKE,
-    A_INPUT_JSON,
-    A_OUTPUT_JSON,
-    A_PROGRAM_JSON,
-    #ifdef MANAGMENT
-    A_CLIENTS_JSON
-    #endif
 } answer_t;
 
 /*
@@ -121,7 +109,6 @@ typedef struct {
 typedef struct {
     int port;
     char *credentials;
-    char *www_folder;
     char nocommands;
 } config;
 
@@ -172,16 +159,11 @@ typedef struct {
 /* prototypes */
 void *server_thread(void *arg);
 void send_error(int fd, int which, char *message);
-void send_output_JSON(int fd, int plugin_number);
-void send_input_JSON(int fd, int plugin_number);
-void send_program_JSON(int fd);
-void check_JSON_string(char *source, char *destination);
 
 #ifdef MANAGMENT
 client_info *add_client(char *address);
 int check_client_status(client_info *client);
 void update_client_timestamp(client_info *client);
-void send_clients_JSON(int fd);
 #endif
 
 
