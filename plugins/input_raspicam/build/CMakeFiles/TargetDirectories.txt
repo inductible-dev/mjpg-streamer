@@ -1,1 +1,0 @@
-/home/pi/telemus2_server/web/mjpg-streamer-raspilite/mjpg-streamer-raspilite/plugins/input_raspicam/build/CMakeFiles/input_raspicam.dir
