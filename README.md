@@ -1,3 +1,9 @@
+mjpg-streamer-raspilite
+=======================
+
+MJPEG Streamer prioritised for lightweight http output, with only a few channels opened (stream, snapshot). Created for parking a lightweight MJPEG HTTP stream source behind a more traditional nodejs HTTP server.
+
+
 mjpg-streamer
 =============
 MJPEG Streamer with raspicam input plugin (based on raspistill mmal source code)
