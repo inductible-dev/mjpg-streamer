@@ -677,10 +677,6 @@ void *client_thread(void *arg)
             memset(numStr, 0, 3);
             strncpy(numStr, sch + 1, 1);
             input_number = atoi(numStr);
-
-            if ((req.type == A_SNAPSHOT_WXP) || (req.type == A_STREAM_WXP)) { // webcamxp adds offset to the camera number
-                input_number--;
-            }
         }
         DBG("plugin_no: %d\n", input_number);
     }
