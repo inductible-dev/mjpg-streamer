@@ -24,7 +24,7 @@
 
 export LD_LIBRARY_PATH="$(pwd)"
 
-./mjpg_streamer -i "./input_raspicam.so -x 320 -y 240 -fps 25 -rot 270 -quality 10" -o "./output_http.so"
+./mjpg_streamer -i "./input_raspicam.so -x 640 -y 480 -fps 25 -rot 270 -quality 30" -o "./output_http.so" 
 #./mjpg_streamer -i "./input_uvc.so -d /dev/video0" -o "./output_http.so"
 
 
